@@ -2,7 +2,7 @@
 connection: "dstc-analytics"
 
 # include all the views
-include: "/views/**/*.view.lkml"
+include: "/views/**/*.view"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -14,3 +14,4 @@ datagroup: dstc_deleted_rows_default_datagroup {
 
 persist_with: dstc_deleted_rows_default_datagroup
 
+explore:  journal_items_deleted{}
