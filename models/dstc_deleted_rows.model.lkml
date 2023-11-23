@@ -14,4 +14,4 @@ datagroup: dstc_deleted_rows_default_datagroup {
 
 persist_with: dstc_deleted_rows_default_datagroup
 
-explore:  journal_items_deleted{}
+explore: journal_items{}

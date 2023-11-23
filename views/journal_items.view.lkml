@@ -1,8 +1,8 @@
-# The name of this view in Looker is "Journal Items Deleted"
-view: journal_items_deleted {
+# The name of this view in Looker is "Journal Items"
+view: journal_items {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `oddo.journal_items_deleted` ;;
+  sql_table_name: `dstc-analytics.testing.full` ;;
   drill_fields: [id]
 
   # This primary key is the unique key for this table in the underlying database.
@@ -13,6 +13,17 @@ view: journal_items_deleted {
     type: number
     sql: ${TABLE}.id ;;
   }
+
+  dimension_group: last_update {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.last_update ;;
+  }
+
+  dimension: user {
+    type: string
+    sql: ${TABLE}.user ;;
+  }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Account ID" in Explore.
@@ -20,6 +31,11 @@ view: journal_items_deleted {
   dimension: account_id {
     type: string
     sql: ${TABLE}.account_id ;;
+  }
+
+  dimension:label{
+    type: string
+    sql: ${TABLE}.label;;
   }
 
   dimension: account_manager_id {
