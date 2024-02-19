@@ -2,7 +2,7 @@
 view: journal_items {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `dstc-analytics.testing.full` ;;
+  sql_table_name: `dstc-analytics.oddo.odoo` ;;
   drill_fields: [id]
 
   # This primary key is the unique key for this table in the underlying database.
